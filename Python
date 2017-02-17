@@ -1,0 +1,22 @@
+def match_ends(words):
+    i = 0
+    for string in words:
+        if len(string) >=2 and string[0] == string[-1]:
+            i = i + 1
+    return i
+
+x = match_ends(["junj","kink"])
+print (x)
+
+def front_x(words):
+    strings_x = []
+    strings_others = []
+    for string in words:
+      if string[0] == 'x':
+          strings_x.append(string)
+      else:
+          strings_others.append(string)     
+    return sorted(strings_x) + sorted(strings_others)
+
+x = front_x(["junj","kink", "xind", "what?"])
+print (x)
