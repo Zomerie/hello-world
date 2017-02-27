@@ -1,4 +1,3 @@
 # hello-world
-Sample Repository
+Repository
 
-Hi everyone! I'm doing good.
