@@ -1,6 +1,3 @@
-'''A.
-'''
-
 def match_ends(words):
     i = 0
     for string in words:
@@ -8,11 +5,9 @@ def match_ends(words):
             i = i + 1
     return i
 
-x = match_ends(["junj","kink"])
+x = match_ends(["junj","kink", "null", "oink-o"])
 print (x)
 
-'''B.
-'''
 def front_x(words):
     strings_x = []
     strings_others = []
@@ -21,22 +16,22 @@ def front_x(words):
           strings_x.append(string)
       else:
           strings_others.append(string)     
+          
     return sorted(strings_x) + sorted(strings_others)
 
-x = front_x(["junj","kink", "xind", "what?"])
+
+x = front_x(["what?", "junj","kink", "xind"])
+print (x)
+y = front_x(["null", "oink-o", "junj","kink", "xxx"])
+x.append(y)
 print (x)
 
-'''C.
-'''
 def sort_last(tuples):
     return sorted(tuples, key=lambda tuples: tuples[-1])
 
 x = sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
 print (x)
 
-
-'''D.
-'''
 def remove_adjacent(nums):
     array1 = []
     for number in nums:
@@ -47,8 +42,7 @@ def remove_adjacent(nums):
 x = remove_adjacent([1, 1, 2, 2, 3])
 print (x)
 
-'''E.
-'''
+
 def linear_merge(list1, list2):
     elements = []
     while list1 and list2:
@@ -60,5 +54,74 @@ def linear_merge(list1, list2):
     elements.extend(list2)
     return elements
 
-x = linear_merge([1, 2, 2, 3], [1, 2, 3])
+x = linear_merge([1, 2, 2, 3, 4], [1, 2, 3])
 print (x)
+
+"""Exercise 2"""
+def donuts(count):
+    if count < 11:
+        return "Number of donuts: {}".format(count)
+    else:
+        return "Number of donuts: many"
+    
+x = donuts(7)
+print (x)
+x = donuts(12)
+print (x)
+
+def both_ends(s):
+    if len(s) < 3:
+        return " "
+    else:
+        return s[:2]+s[-2:]
+    
+x = both_ends("wsasafwee")
+print (x)
+
+def fix_start(s):
+    return s[0]+s[1:].replace(s[0],"*")
+    
+x = fix_start("bbabbabbbbbe")
+print (x)
+
+def mix_up(a, b):
+    return "{} {}".format(b[0]+a[1:], a[0]+b[1:])
+    
+x = mix_up("bbb","ppp")
+print (x)
+
+def verbing(s):
+    if len(s)<3:
+        return s
+    else:
+        if s[-3:] !="ing":
+            return s+"ly"
+        else:
+            return s+"ing"
+
+x = verbing("do")
+print (x)
+x = verbing("singing")
+print (x)
+x = verbing("eat")
+print (x)
+
+def not_bad(s):
+    find_not = s.find('not')
+    find_bad = s.find('bad')
+    if find_not != -1 and find_bad != -1 and find_bad > find_not:
+        s = s[:find_not] + 'good' + s[find_bad+3:]
+    return s
+
+x = not_bad('This dinner is not bad!')
+print (x)
+
+def front_back(a, b): 
+    a_half = (len(a)+1) / 2 
+    b_half = (len(b)+1) / 2
+    return '{}{}{}{}'.format(a[:a_half], b[:b_half], a[a_half:], b[b_half:])
+
+x = front_back("tesrhs", "agfsaerw")
+print (x)
+
+
